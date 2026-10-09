@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HN Jev Sorter · Setup</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: radial-gradient(1200px 600px at 50% -10%, #2a1a10, #0f1115 60%); color: #e8eaee; font: 15px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  main { width: min(560px, calc(100vw - 32px)); padding: 32px; border-radius: 18px; background: rgba(22,24,30,.9); border: 1px solid rgba(255,255,255,.08); border-top: 3px solid #ff6600; box-shadow: 0 40px 100px rgba(0,0,0,.5); }
+  h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: -.01em; }
+  h1 span { color: #ff6600; }
+  .sub { margin: 0 0 26px; color: #8a93a3; }
+  ol { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 22px; }
+  li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 12px; }
+  li::before { content: counter(s); width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,102,0,.15); color: #ff8a3d; font-weight: 700; font-size: 13px; }
+  li b { display: block; margin-bottom: 4px; }
+  li p { margin: 0; color: #9aa3b2; font-size: 14px; }
+  a { color: #ffa25f; }
+  .row { display: flex; gap: 8px; margin-top: 8px; }
+  input { flex: 1; min-width: 0; padding: 10px 12px; border-radius: 9px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #e8eaee; font: 13px ui-monospace, Menlo, monospace; outline: none; }
+  input:focus { border-color: #ff6600; }
+  button { border: 0; padding: 10px 16px; border-radius: 9px; background: #ff6600; color: #fff; font: 600 13px system-ui, sans-serif; cursor: pointer; box-shadow: 0 2px 12px rgba(255,102,0,.35); }
+  button:hover { background: #ff7a1f; }
+  button.ghost { background: rgba(255,255,255,.07); color: #aeb5c2; box-shadow: none; }
+  #msg { min-height: 20px; margin-top: 8px; font-size: 13px; color: #8a93a3; }
+  #msg.err { color: #ff8080; } #msg.ok { color: #5fd38d; }
+  kbd { padding: 1px 6px; border-radius: 5px; background: rgba(255,255,255,.08); font: 12px ui-monospace, Menlo, monospace; }
+</style>
+</head>
+<body>
+<main>
+  <h1><span>▲</span> HN Jev Sorter</h1>
+  <p class="sub">Sorts Hacker News comments into buckets as you watch, using Jev by TypeSafe.</p>
+  <ol>
+    <li><div><b>Get a Jev API key</b><p>Create one in the <a href="https://console.typesafe.ai/keys" target="_blank" rel="noopener">TypeSafe console</a>.</p></div></li>
+    <li><div><b>Paste it here</b><p>The key is checked with one tiny request and stored only in this browser.</p>
+      <div class="row"><input id="key" type="password" placeholder="Paste your API key" spellcheck="false"><button id="show" class="ghost">Show</button><button id="save">Save</button></div>
+      <div id="msg"></div></div></li>
+    <li><div><b>Open a thread and click the icon</b><p>Pin the extension from the puzzle-piece menu, open any <a href="https://news.ycombinator.com/" target="_blank" rel="noopener">Hacker News</a> comment page, click the icon, then press <kbd>Run</kbd>.</p></div></li>
+  </ol>
+</main>
+<script src="options.js"></script>
+</body>
+</html>
