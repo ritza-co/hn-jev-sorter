@@ -4,7 +4,7 @@ A Chrome extension that sorts Hacker News comments into buckets while you watch.
 
 Comments are classified by [Jev](https://docs.typesafe.ai/), TypeSafe's decision model. Jev answers each one in about 300 ms, so the comments sort in real time.
 
-![HN Jev Sorter sorting a 132-comment Hacker News thread](media/demo.gif)
+![HN Jev Sorter sorting a 132-comment Hacker News thread](media/hn-jev-sorter-demo.gif)
 
 ## Install
 
